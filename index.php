@@ -130,7 +130,23 @@
                     }),
                     Swal.disableButtons();
                 },
-                
+                success: function(response) {
+                    if(response['estado'] == "ok") {
+                        Swal.fire({
+                            type: 'success',
+                            title: 'Ok!',
+                            text: response['mensaje'],
+                        });
+                        /*location.reload();*/
+                    }
+                    if(response['estado'] == "error") {
+                        Swal.fire({
+                            type: 'error',
+                            title: 'Opps!',
+                            text: response['mensaje'],
+                        });
+                    }
+                },
             });
         });
 
