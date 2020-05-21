@@ -14,6 +14,8 @@
     
     <link rel="stylesheet" href="Librerias/sweetalert2/sweetalert/sweetalert2.min.css">
 
+    <link rel="stylesheet" href="Librerias/indexStyle.css">
+
 </head>
 
 <body>
