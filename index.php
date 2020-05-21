@@ -21,19 +21,19 @@
     <div class="container">
 
         <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" id="nombre">
+        <input type="text" name="nombre" id="nombre"  class="form-control">
 
         <label for="apellido">Apellido:</label>
-        <input type="text" name="apellido" id="apellido">
+        <input type="text" name="apellido" id="apellido" class="form-control">
 
         <label for="nombreUsuario">Nombre de usuario:</label>
-        <input type="text" name="nombreUsuario" id="nombreUsuario">
+        <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control">
 
         <label for="email">Correo:</label>
-        <input type="email" name="correo" id="correo">
+        <input type="email" name="correo" id="correo" class="form-control">
 
         <label for="contrasenia">Contraseña:</label>
-        <input type="password" name="contrasenia" id="contrasenia">
+        <input type="password" name="contrasenia" id="contrasenia" class="form-control">
 
         <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar</button>
 
@@ -128,23 +128,7 @@
                     }),
                     Swal.disableButtons();
                 },
-                success: function(response) {
-                    if(response['estado'] == "ok") {
-                        Swal.fire({
-                            type: 'success',
-                            title: 'Ok!',
-                            text: response['mensaje'],
-                        });
-                        /*location.reload();*/
-                    }
-                    if(response['estado'] == "error") {
-                        Swal.fire({
-                            type: 'error',
-                            title: 'Opps!',
-                            text: response['mensaje'],
-                        });
-                    }
-                },
+                
             });
         });
 
