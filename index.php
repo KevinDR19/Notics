@@ -105,7 +105,47 @@
                 });
                 return;
             }
-
+            
+            $.ajax({
+                data: {
+                    nombre: nombre,
+                    apellido: apellido,
+                    nombreUsuario: nombreUsuario,
+                    correo: correo,
+                    contrasenia: contrasenia,
+                },
+                dataType: 'json',
+                type: 'POST',
+                url: 'Funciones/registroController.php',
+                beforeSend: function() {
+                    Swal.fire({
+                        title: "Enviando datos...",
+                        text: "Esto tomará unos segundos!",
+                        allowOutsideClick: false,
+                        allowEscapeKey: false,
+                        imageWidth: 150,
+                        imageUrl: "https://utservisalud.isware.com.co/img/loading3.gif",
+                    }),
+                    Swal.disableButtons();
+                },
+                success: function(response) {
+                    if(response['estado'] == "ok") {
+                        Swal.fire({
+                            type: 'success',
+                            title: 'Ok!',
+                            text: response['mensaje'],
+                        });
+                        /*location.reload();*/
+                    }
+                    if(response['estado'] == "error") {
+                        Swal.fire({
+                            type: 'error',
+                            title: 'Opps!',
+                            text: response['mensaje'],
+                        });
+                    }
+                },
+            });
         });
 
     </script>
