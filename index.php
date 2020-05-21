@@ -20,7 +20,7 @@
 
 <body>
 
-    <div class="container">
+    <div class="contenedor">
 
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" id="nombre"  class="form-control">
