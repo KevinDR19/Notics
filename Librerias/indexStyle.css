@@ -1,0 +1,17 @@
+.contenedor{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #DDD;
+    color: #ffffff;
+    padding: 2em;
+    width: 400px;
+    height: 350px;
+    margin-top: -175px;
+    margin-left: -200px;
+    border-radius: 10px;
+
+    -webkit-box-shadow: 6px 2px 20px 1px rgba(0,0,0,0.5);
+    -moz-box-shadow: 6px 2px 20px 1px rgba(0,0,0,0.5);
+    box-shadow: 6px 2px 20px 1px rgba(0,0,0,0.5);
+}
