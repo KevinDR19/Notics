@@ -20,26 +20,22 @@
 
     <div class="container">
 
-        <form action="" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre">
 
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre">
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" id="apellido">
 
-            <label for="apellido">Apellido:</label>
-            <input type="text" name="apellido" id="apellido">
+        <label for="nombreUsuario">Nombre de usuario:</label>
+        <input type="text" name="nombreUsuario" id="nombreUsuario">
 
-            <label for="nombreUsuario">Nombre de usuario:</label>
-            <input type="text" name="nombreUsuario" id="nombreUsuario">
+        <label for="email">Correo:</label>
+        <input type="email" name="correo" id="correo">
 
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email">
+        <label for="contrasenia">Contraseña:</label>
+        <input type="password" name="contrasenia" id="contrasenia">
 
-            <label for="contrasenia">Contraseña:</label>
-            <input type="password" name="contrasenia" id="contrasenia">
-
-            <button type="submit">Enviar</button>
-
-        </form>
+        <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar</button>
 
     </div>
 
@@ -50,5 +46,68 @@
     <script src="Librerias/sweetalert2/sweetalert/sweetalert2.all.min.js"></script>
 
 </body>
+
+    <script>
+    
+        $('#btnEnviar').click(function(){ 
+            var nombre = $('#nombre').val();
+            var apellido = $('#apellido').val();
+            var nombreUsuario = $('#nombreUsuario').val();
+            var correo = $('#correo').val();
+            var contrasenia = $('#contrasenia').val();
+
+            if(nombre == "") {
+                $('#nombre').focus();
+                Swal.fire({
+                    type: 'warning',
+                    title: 'Opps!',
+                    text: 'Este campo es obligatorio.',
+                });
+                return;
+            }
+
+            if(apellido == "") {
+                $('#apellido').focus();
+                Swal.fire({
+                    type: 'warning',
+                    title: 'Opps!',
+                    text: 'Este campo es obligatorio.',
+                });
+                return;
+            }
+
+            if(nombreUsuario == "") {
+                $('#nombreUsuario').focus();
+                Swal.fire({
+                    type: 'warning',
+                    title: 'Opps!',
+                    text: 'Este campo es obligatorio.',
+                });
+                return;
+            }
+
+            if(correo == "") {
+                $('#correo').focus();
+                Swal.fire({
+                    type: 'warning',
+                    title: 'Opps!',
+                    text: 'Este campo es obligatorio.',
+                });
+                return;
+            }
+
+            if(contrasenia == "") {
+                $('#contrasenia').focus();
+                Swal.fire({
+                    type: 'warning',
+                    title: 'Opps!',
+                    text: 'Este campo es obligatorio.',
+                });
+                return;
+            }
+
+        });
+
+    </script>
 
 </html>
