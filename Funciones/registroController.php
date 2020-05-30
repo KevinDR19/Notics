@@ -11,6 +11,16 @@
     $correo = trim($_POST['correo']);
     $contrasenia = trim($_POST['contrasenia']);
 
+    $sql = $conexion->prepare("SELECT * FROM Usuarios WHERE nombreUsuario = :nombreUsuario");
+    $sql->bindParam(':nombreUsuario', $nombreUsuario);
+    $sql->execute();
+    $existeUsuario = $sql->rowCount();
+
+    if($existeUsuario >= 1) {
+        echo "El nombre de usuario ya existe!";
+        exit();
+    }
+
     $contraseniaHash = password_hash($contrasenia, PASSWORD_ARGON2I);
 
     try {
@@ -18,7 +28,7 @@
         $conexion->beginTransaction();
 
         #Prepara la consulta sql
-        $sql = $conexion->prepare("INSERT INTO usuarios (nombre, apellido, nombreUsuario,
+        $sql = $conexion->prepare("INSERT INTO Usuarios (nombre, apellido, nombreUsuario,
         correo, contrasenia) VALUES (:nombre, :apellido, :nombreUsuario, :correo, :contrasenia) ");
 
         #Blinda los datos de inserción
