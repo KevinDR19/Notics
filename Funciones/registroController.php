@@ -26,7 +26,7 @@
         $sql->bindParam(':apellido', $apellido);
         $sql->bindParam(':nombreUsuario', $nombreUsuario);
         $sql->bindParam(':correo', $correo);
-        $sql->bindParam(':contrasenia', $contrasenia);
+        $sql->bindParam(':contrasenia', $contraseniaHash);
 
         #Ejecuta la consulta
         $sql->execute();
