@@ -23,7 +23,7 @@
     <div class="contenedor">
 
         <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" id="nombre"  class="form-control">
+        <input type="text" name="nombre" id="nombre" class="form-control">
 
         <label for="apellido">Apellido:</label>
         <input type="text" name="apellido" id="apellido" class="form-control">
@@ -37,7 +37,11 @@
         <label for="contrasenia">Contraseña:</label>
         <input type="password" name="contrasenia" id="contrasenia" class="form-control">
 
-        <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar</button>
+        <div class="form-group">
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar</button>
+            </div>
+        </div>
 
     </div>
 
