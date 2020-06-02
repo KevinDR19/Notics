@@ -1,12 +1,12 @@
 .contenedor {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     background-color: #DDD;
     color: #000000;
     padding: 2em;
     width: 400px;
-    height: 550px;
+    height: 450px;
     margin-top: -175px;
     margin-left: -200px;
     border-radius: 10px;
