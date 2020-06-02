@@ -17,7 +17,7 @@
     $existeUsuario = $sql->rowCount();
 
     if($existeUsuario >= 1) {
-        echo "El nombre de usuario ya existe!";
+        echo "El nombre de usuario $nombreUsuario ya existe!";
         exit();
     }
 
