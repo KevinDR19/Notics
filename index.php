@@ -22,21 +22,31 @@
 
     <div class="contenedor">
 
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" id="nombre" class="form-control">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" id="apellido" class="form-control">
+        </div>
 
-        <label for="apellido">Apellido:</label>
-        <input type="text" name="apellido" id="apellido" class="form-control">
+        <div class="form-group">
+            <label for="nombreUsuario">Nombre de usuario:</label>
+            <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control">
+        </div>
 
-        <label for="nombreUsuario">Nombre de usuario:</label>
-        <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control">
+        <div class="form-group">
+            <label for="email">Correo:</label>
+            <input type="email" name="correo" id="correo" class="form-control">
+        </div>
 
-        <label for="email">Correo:</label>
-        <input type="email" name="correo" id="correo" class="form-control">
-
-        <label for="contrasenia">Contraseña:</label>
-        <input type="password" name="contrasenia" id="contrasenia" class="form-control">
-
+        <div class="form-group">
+            <label for="contrasenia">Contraseña:</label>
+            <input type="password" name="contrasenia" id="contrasenia" class="form-control">
+        </div>
+        
         <div class="form-group">
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar</button>
