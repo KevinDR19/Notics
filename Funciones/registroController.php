@@ -23,6 +23,8 @@
 
     $contraseniaHash = password_hash($contrasenia, PASSWORD_ARGON2I);
 
+    $response = array();
+
     try {
         #Inicia la transacción
         $conexion->beginTransaction();
