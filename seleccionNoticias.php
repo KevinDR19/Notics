@@ -5,7 +5,7 @@
     $conexion = new conexion();
     $cnx = $conexion->conectar();
 
-    $sql = $conexion->prepare("SELECT * FROM categorias");
+    $sql = $cnx->prepare("SELECT * FROM categorias");
     $sql->execute();
     $categorias = $sql->fetchAll();
 
