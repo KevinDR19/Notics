@@ -11,7 +11,7 @@
     $correo = trim($_POST['correo']);
     $contrasenia = trim($_POST['contrasenia']);
 
-    $sql = $conexion->prepare("SELECT * FROM Usuarios WHERE nombreUsuario = :nombreUsuario");
+    $sql = $cnx->prepare("SELECT * FROM Usuarios WHERE nombreUsuario = :nombreUsuario");
     $sql->bindParam(':nombreUsuario', $nombreUsuario);
     $sql->execute();
     $existeUsuario = $sql->rowCount();
@@ -27,10 +27,10 @@
 
     try {
         #Inicia la transacción
-        $conexion->beginTransaction();
+        $cnx->beginTransaction();
 
         #Prepara la consulta sql
-        $sql = $conexion->prepare("INSERT INTO Usuarios (nombre, apellido, nombreUsuario,
+        $sql = $cnx->prepare("INSERT INTO Usuarios (nombre, apellido, nombreUsuario,
         correo, contrasenia) VALUES (:nombre, :apellido, :nombreUsuario, :correo, :contrasenia) ");
 
         #Blinda los datos de inserción
@@ -44,14 +44,14 @@
         $sql->execute();
 
         #Guarda los datos
-        $conexion->commit();
+        $cnx->commit();
         $response['estado'] = "ok";
         $response['mensaje'] = "Los datos fueron insertados exitosamente.";
         echo json_encode($response);
         exit();
     }catch(PDOException $e) {
         #Devuelve los datos
-        $conexion->rollBack();
+        $cnx->rollBack();
         $response['estado'] = "error";
         $response['mensaje'] = "Se presentó el siguiente error: $e";
         echo json_encode($response);
