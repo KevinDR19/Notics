@@ -1,6 +1,16 @@
 <?php
 
-    
+    require_once('Database/conexion.php');
+
+    $conexion = new conexion();
+    $cnx = $conexion->conectar();
+
+    $categoria = $_GET['categoria'];
+
+    $sql = $conexion->prepare("SELECT * FROM noticias WHERE categoria = :categoria");
+    $sql->bindParam(':categoria', $categoria);
+    $sql->execute();
+    $noticias = $sql->fetchAll();
 
 ?>
 
@@ -25,7 +35,7 @@
 
 <body>
     
-    
+
 
     <script src="Librerias/jquery-3.4.1/jquery-3.4.1.js"></script>
 
