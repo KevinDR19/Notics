@@ -1,3 +1,16 @@
+<?php
+
+    require_once('Database/conexion.php');
+
+    $conexion = new conexion();
+    $cnx = $conexion->conectar();
+
+    $sql = $conexion->prepare("SELECT * FROM categorias");
+    $sql->execute();
+    $categorias = $sql->fetchAll();
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="es">
@@ -19,7 +32,37 @@
 
 <body>
     
+    <div class="container" style="padding-top: 2em;">
     
+        <form action="noticias.php" method="get">
+
+            <label for="categoria">Seleccione una categoría</label>
+
+            <select name="categoria" id="categoria">
+            
+                <option value="@">---</option>
+
+                <?php
+
+                    foreach($categorias as $key) {
+
+                ?>
+
+                <option value="<?= $key['idCategoria'] ?>"><?= $key['categoria'] ?></option>
+
+                <?php
+
+                    }
+
+                ?>
+            
+            </select>
+
+            <button type="submit" class="btn btn-primary">Ir</button>
+
+        </form>
+        
+    </div>
 
     <script src="Librerias/jquery-3.4.1/jquery-3.4.1.js"></script>
 
