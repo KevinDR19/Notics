@@ -35,7 +35,66 @@
 
 <body>
     
+    <div class="container">
+    
+        <div class="table-responsive">
+        
+            <?php
 
+                foreach($noticias as $key) {
+
+            ?>
+
+                <div style="margin-top: 2em;">
+                
+                    <label style="font-weight: bold"><?= $key['tituloNoticia'] ?></label>
+                    <br>
+
+                    <p><?= $key['descripcionNoticia'] ?></p>
+                    <br>
+
+                    <textarea name="comentario" id="comentario" cols="30" rows="5"></textarea>
+
+                    <button class="btn btn-primary">Publicar</button>
+                    <br>
+
+                    <h4>Comentarios</h4>
+
+                    <?php
+
+                        $noticia = $key['idNoticia'];
+
+                        $sql = $conexion->prepare("SELECT * FROM comentarios WHERE idNoticia = :idNoticia");
+                        $sql->bindParam(':idNoticia', $noticia);
+                        $sql->execute();
+                        $comentarios = $sql->fetchAll();
+
+                        foreach($comentarios as $key) {
+
+                    ?>
+
+                        <label><?= $key['comentario'] ?></label>
+                        <br>
+
+                    <?php
+                    
+                        }        
+
+                    ?>
+
+                </div>
+            
+                <hr>
+
+            <?php
+
+                }
+
+            ?>
+
+        </div>
+    
+    </div>
 
     <script src="Librerias/jquery-3.4.1/jquery-3.4.1.js"></script>
 
