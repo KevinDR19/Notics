@@ -55,7 +55,7 @@
 
     </div>
 
-    <script src="Librerias/jquery-3.4.1/jquery-3.4.1.js"></script>
+    <script src="Librerias/jquery/jquery-3.5.0.js"></script>
 
     <script src="Librerias/bootstrap-4.4.1/js/bootstrap.js"></script>
 
