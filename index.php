@@ -130,9 +130,9 @@
                     correo: correo,
                     contrasenia: contrasenia,
                 },
-                dataType: 'json',
-                type: 'POST',
-                url: 'Funciones/registroController.php',
+                dataType: "json",
+                type: "POST",
+                url: "Funciones/registroController.php",
                 beforeSend: function() {
                     Swal.fire({
                         title: "Enviando datos...",
