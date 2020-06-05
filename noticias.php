@@ -54,6 +54,7 @@
                     <br>
 
                     <textarea name="comentario" id="comentario" cols="30" rows="5"></textarea>
+                    <br>
 
                     <button class="btn btn-primary">Publicar</button>
                     <br>
@@ -64,7 +65,7 @@
 
                         $noticia = $key['idNoticia'];
 
-                        $sql = $conexion->prepare("SELECT * FROM comentarios WHERE idNoticia = :idNoticia");
+                        $sql = $cnx->prepare("SELECT * FROM comentarios WHERE idNoticia = :idNoticia");
                         $sql->bindParam(':idNoticia', $noticia);
                         $sql->execute();
                         $comentarios = $sql->fetchAll();
