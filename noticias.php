@@ -57,9 +57,10 @@
                     <br>
 
                     <button class="btn btn-primary">Publicar</button>
-                    <br>
+                    <br><br>
 
                     <h4>Comentarios</h4>
+                    <br>
 
                     <?php
 
