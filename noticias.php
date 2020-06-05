@@ -7,7 +7,7 @@
 
     $categoria = $_GET['categoria'];
 
-    $sql = $cnx->prepare("SELECT * FROM noticias WHERE categoria = :categoria");
+    $sql = $cnx->prepare("SELECT * FROM noticias WHERE idCategoria = :categoria");
     $sql->bindParam(':categoria', $categoria);
     $sql->execute();
     $noticias = $sql->fetchAll();
