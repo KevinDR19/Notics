@@ -16,6 +16,12 @@
 
     <link rel="stylesheet" href="Librerias/indexStyle.css">
 
+    <script src="Librerias/jquery/jquery-3.5.0.js"></script>
+
+    <script src="Librerias/bootstrap-4.4.1/js/bootstrap.js"></script>
+
+    <script src="Librerias/sweetalert2/sweetalert/sweetalert2.all.min.js"></script>
+
 </head>
 
 <body>
@@ -54,12 +60,6 @@
         </div>
 
     </div>
-
-    <script src="Librerias/jquery/jquery-3.5.0.js"></script>
-
-    <script src="Librerias/bootstrap-4.4.1/js/bootstrap.js"></script>
-
-    <script src="Librerias/sweetalert2/sweetalert/sweetalert2.all.min.js"></script>
 
 </body>
 
