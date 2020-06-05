@@ -58,7 +58,7 @@
             
             </select>
 
-            <button type="submit" class="btn btn-primary">Ir</button>
+            <button type="submit" class="btn btn-primary">Ir <i class="fas fa-share"></i></button>
 
         </form>
         
