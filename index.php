@@ -132,7 +132,7 @@
                 },
                 dataType: "json",
                 type: "POST",
-                url: "Funciones/registroController.php",
+                url: "Funciones/registroController.php", 
                 beforeSend: function() {
                     Swal.fire({
                         title: "Enviando datos...",
